@@ -43,7 +43,7 @@
                     <nav class="main_nav">
                         <ul class="d-flex flex-row align-items-start justify-content-start">
                             <li><a href="../index.php">Inicio</a></li>
-                            <li class="active"><a href="">DWES</a></li>
+                            <li class="active"><a href="../proyectoDWES/indexProyectoDWES.php">DWES</a></li>
                             <li><a href="">DIW</a></li>
                             <li><a href="">DWEC</a></li>
                             <li><a href="">EIE</a></li>
@@ -63,7 +63,7 @@
                     <nav class="menu_nav">
                         <ul>
                             <li><a href="../index.php">HOME</a></li>				
-                            <li><a href="">DWES</a></li>
+                            <li><a href="../proyectoDWES/indexProyectoDWES.php">DWES</a></li>
                             <li><a href="">DIW</a></li>
                             <li><a href="">DWEC</a></li>
                             <li><a href="">EIE</a></li>
@@ -109,7 +109,7 @@
                                     <div class="mostrarejercicio" data-hover="MOSTRAR EL EJERCICIO">
                                         <div class="listing_image">
                                             <div class="listing_image_container">
-                                                <h3>ENUNCIADO</h3>
+                                                <h3>Conexión a la base de datos con la cuenta usuario y tratamiento de errores</h3>
                                             </div>
                                         </div>
                                     </div>
@@ -117,7 +117,7 @@
                                         <div class="mostrarcodigo" data-hover="MOSTRAR EL CODIGO">
                                             <div class="service_title_container d-flex flex-row align-items-center justify-content-start">
                                                 <div class="service_title">
-                                                    <h3 >PRUEBA</h3>
+                                                    <h3>EJERCICIO 01</h3>
                                                 </div>
                                             </div>
                                         </div>
@@ -192,7 +192,7 @@
                                     <nav class="footer_nav order-md-2 order-1 ml-md-auto">
                                         <ul class="d-flex flex-md-row flex-column align-items-md-center align-items-start justify-content-start">
                                             <li><a href="../index.php">Inicio</a></li>				
-                                            <li><a href="">DWES</a></li>
+                                            <li><a href="../proyectoDWES/indexProyectoDWES.php">DWES</a></li>
                                             <li><a href="">DIW</a></li>
                                             <li><a href="">DWEC</a></li>
                                             <li><a href="">EIE</a></li>
