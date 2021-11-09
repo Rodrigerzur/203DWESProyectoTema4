@@ -11,40 +11,45 @@ and open the template in the editor.
     </head>
     <body>
         <?php
-            require_once '../config/confDBPDO.php';
+        require_once '../config/confDBPDO.php';
+
+
+        try {
             echo '<h2>Conexion correcta </h2>';
-            
-            try{
-                $miDB = new PDO(HOST, USER, PASSWORD);
-                $miDB ->setAttribute(PDO_ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                
-                $aAtributosPDO=[
-                    "AUTOCOMMIT",
-                    "ERRMODE",
-                    "CASE",
-                    "CLIENT_VERSION",
-                    "CONNECTION_STATUS",
-                    "ORACLE_NULLS",
-                    "PERSISTENT",
-                    "SERVER_INFO",
-                    "SERVER_VERSION"
-                ];
-                
-                foreach($aAtributosPDO as $valor){
-                    echo 'PDO::ATTR_$valor: ';
-                    echo $miDB->getAttribute(costant("PDO::ATTR_$valor"))."<br>";
-                }
-                
-                echo "<h3><span style='collor: green;'>"."Conexion establecida con exito </span></h3>";
-            } catch (PDOException $exception) {
-                $errorExcepcion = $excepcion->getCode();
-                $mensajeExcepcion = $excepcion->getMessage();
-                
-                echo "<span style='color:red;'>Error: </span>".$mensajeExcepcion."<br>";
-                echo "<span style='color:red;'>Codigo del error: </span>".$mensajeExcepcion."<br>";
-            } finally {
-                unset($miDB);
+            $miDB = new PDO(HOST, USER, PASSWORD);
+            $miDB->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+            $aAtributosPDO = [
+                "AUTOCOMMIT",
+                "ERRMODE",
+                "CASE",
+                "CLIENT_VERSION",
+                "CONNECTION_STATUS",
+                "ORACLE_NULLS",
+                "PERSISTENT",
+                "SERVER_INFO",
+                "SERVER_VERSION"
+            ];
+
+            echo '<table>';
+            foreach ($aAtributosPDO as $atributo) {
+                echo "<tr><td>PDO::ATTR_$atributo: </td>";
+                echo '<td>' . $miDB->getAttribute(constant("PDO::ATTR_$atributo")) . "</td></tr>";
             }
+            echo '</table>';
+
+            echo "<h3><span style='collor: green;'>" . "Conexion establecida con exito </span></h3>";
+        } catch (PDOException $excepcion) {//Codigo que se ejecuta si hay algun error
+            $errorExcepcion = $excepcion->getCode(); //Obtengo el codigo del error y lo almaceno en la variable errorException
+            $mensajeException = $excepcion->getMessage(); //Obtengo el mensaje del error y lo almaceno en la variable mensajeException
+
+            echo "<p style='color: red'>Codigo del error: </p>" . $errorExcepcion; //Muestro el codigo del error
+            echo "<p style='color: red'>Mensaje del error: </p>" . $mensajeException; //Muestro el mensaje del error
+        } finally {
+            //Cierro la conexion
+            unset($miDB);
+        }
         ?>
     </body>
 </html>
+0
