@@ -126,55 +126,32 @@
                             </a>
                         </div>
 
-                        <!-- Ejercicio -->
-                        <div class="col-xl-4 col-md-6">
-                            <a href="codigoPHP/ejercicio01.php">
-                                <div class="service">
-                                    <div class="mostrarejercicio" data-hover="MOSTRAR EL EJERCICIO">
-                                        <div class="listing_image">
-                                            <div class="listing_image_container">
-                                                <h3>ENUNCIADO</h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <a href="mostrarcodigo/muestraEjercicio01.php">
-                                        <div class="mostrarcodigo" data-hover="MOSTRAR EL CODIGO">
-                                            <div class="service_title_container d-flex flex-row align-items-center justify-content-start">
-                                                <div class="service_title">
-                                                    <h3 >PRUEBA</h3>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </a>
-                        </div>
+                        <table>
+                            <tr>
+                                <td>Conexión a la base de datos con la cuenta usuario y tratamiento de errores.</td><td data-hover ="PDO"><a href="codigoPHP/ejercicio01PDO.php">Ejecutar</a></td><td><a href="mostrarcodigo/muestraEjercicio01PDO.php">Mostrar</a></td>
+                                <td><a href="codigoPHP/ejercicio01PDO.php">Ejecutar</a></td><td><a href="mostrarcodigo/muestraEjercicio01PDO.php">Mostrar</a></td>
+                            </tr>
 
-                        <!-- Ejercicio -->
-                        <div class="col-xl-4 col-md-6">
-                            <a href="codigoPHP/ejercicio02.php">
-                                <div class="service">
-                                    <div class="mostrarejercicio" data-hover="MOSTRAR EL EJERCICIO">
-                                        <div class="listing_image">
-                                            <div class="listing_image_container">
-                                                <h3>ENUNCIADO</h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <a href="mostrarcodigo/muestraEjercicio02.php">
-                                        <div class="mostrarcodigo" data-hover="MOSTRAR EL CODIGO">
-                                            <div class="service_title_container d-flex flex-row align-items-center justify-content-start">
-                                                <div class="service_title">
-                                                    <h3 >PRUEBA</h3>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </a>
-                        </div>
+                            <tr>
+                                <td>Mostrar el contenido de la tabla Departamento y el número de registros.</td><td><a href="codigoPHP/ejercicio02PDO.php">Ejecutar</a></td><td><a href="mostrarcodigo/muestraEjercicio02PDO.php">Mostrar</a></td>
+                                <td><a href="codigoPHP/ejercicio02PDO.php">Ejecutar</a></td><td><a href="mostrarcodigo/muestraEjercicio02PDO.php">Mostrar</a></td>
+                            </tr>
+                            <tr>
+                                <td>Formulario para añadir un departamento a la tabla Departamento con validación de entrada y
+                                    control de errores.<td colspan="2"><a href="codigoPHP/ejercicio03PDO.php">Ejecutar</a></td><td colspan="2"><a href="mostrarcodigo/muestraEjercicio03PDO.php">Mostrar</a></td>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Formulario de búsqueda de departamentos por descripción</td><td colspan="2"><a href="codigoPHP/ejercicio04PDO.php">Ejecutar</a></td><td colspan="2"><a href="mostrarcodigo/muestraEjercicio04PDO.php">Mostrar</a></td>
+                            </tr>
+                            <tr>
+                                <td>Pagina web que añade tres registros a nuestra tabla Departamento utilizando tres instrucciones
+                                    insert y una transacción, de tal forma que se añadan los tres registros o no se añada ninguno.</td><td colspan="2"><a href="codigoPHP/ejercicio05PDO.php">Ejecutar</a></td><td colspan="2"><a href="mostrarcodigo/muestraEjercicio05PDO.php">Mostrar</a></td>
+                            </tr>
+                        </table>
 
-                       
+
+
 
                     </div>
                 </div>

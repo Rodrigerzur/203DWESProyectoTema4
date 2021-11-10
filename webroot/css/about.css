@@ -699,6 +699,43 @@ Los ejercicios
 {
     margin-top: 10px;
 }
+
+
+table{
+    border: solid 3px black;
+    width:100%;
+}
+table td{
+    border: solid 1px black;
+    
+   
+    padding:10px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color:black;
+    height:100%
+
+}
+td:hover:before{
+    color:red;
+    visibility: visible;
+    content:attr(data-hover);
+}
+td a{
+    display: inline-block;
+    height:100%;
+    width:100%;
+    text-decoration: none;
+}
+td a:hover {
+    color:red;
+}
+td div{
+    display: inline-block;
+    height:100%;
+    width:100%;
+}
+
 /*********************************
 10. Footer
 *********************************/
