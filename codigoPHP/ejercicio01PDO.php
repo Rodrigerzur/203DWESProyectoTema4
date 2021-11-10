@@ -11,8 +11,7 @@ and open the template in the editor.
     </head>
     <body>
         <?php
-        require_once '../config/confDBPDO.php';
-
+        require_once '../config/confDBPDO.php';//Archivo con configuracion de PDO
 
         try {
             echo '<h2>Conexion correcta </h2>';
