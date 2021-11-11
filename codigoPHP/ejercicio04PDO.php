@@ -5,148 +5,217 @@
         <title>Ejercicio04PDO</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <style>
+            body{
+              
+            }
+            h2{
+                font-family: sans-serif;
+                font-size:2em;
+                font-weight: bold;
+                color: deepskyblue;
+                border-bottom: 5px solid deepskyblue;
+            }
+            table{
+                text-align: center;
+                border-collapse: collapse;
+                margin:auto;
+            }
+            td{
+                border:1px solid #0056b3;
+                text-align:center;
+                padding:5px;
+            }
+            th{
+                text-align:center;
+                font-weight:bold;
+                padding:5px;
+            }
+            span{
+                color:red;
+                font-weight: bold;
+            }
+            form{
+                display: inline-block;
+                margin:auto;
+            }
+            fieldset{
+
+                width: 100%;
+                background-color: rgba(45, 23, 143, 0.17);
+                color:purple;
+                font-family: sans-serif;
+                font-weight: bold;
+                font-size:1.2em;
+                padding:20px;
+                text-align: justify;
+                border:5px solid black;
+            }
+            legend{
+                color:Red;
+                font-size: 1.5em;
+                padding:5px;
+                margin: auto;
+            }
+            fieldset input{
+                background-color: white;
+                padding: 0.3rem;
+            }
         </style>
     </head>
     <body>
         <main>
             <?php
-            require_once '../core/210322ValidacionFormularios.php'; //Incluir la libreria de funciones para la validacion
-            require_once '../config/confDBMySQL.php'; //Archivo con configuracion de mysqli
-
-            /*
-             * Definición de constantes
-             */
-            define("OBLIGATORIO", 1);
+            ///Incluir la libreria de funciones para la validacion
+        require_once '../core/210322ValidacionFormularios.php';
+        require_once '../config/confDBPDO.php'; //Archivo con configuracion de PDO
+            
+            //Variable OPCIONAL inicializada a 0
             define("OPCIONAL", 0);
-
-            /*
-             * Inicialización del array de elementos del formulario.
-             */
-            $aFormulario = [
-                'descDepartamento' => ''
-            ];
-
-            /*
-             * Inicialización del array de errores.
-             */
+            
+            //Variables maximos y minimos
+            define("TAMANO_MAXIMO_DESCDEPARTAMENTO",255);
+            
+            //Variable de entrada correcta inicializada a true
+            $entradaOK = true;
+            
+            //Creo el array de errores y lo inicializo a null
             $aErrores = [
-                'descDepartamento' => ''
+                'descDepartamento' => null
             ];
-
-            /*
-             * Confirmación si el formulario ha sido enviado.
-             * Si ha sido enviado, valida los campos y registra los errores.
-             */
-            if (isset($_REQUEST['submit'])) {
-                /*
-                 * Manejador de errores. Por defecto asume que no hay ningún
-                 * error (true). Si encuentra alguno se pone a false.
-                 */
-                $bEntradaOK = true;
-
-                /*
-                 * Registro de errores. Valida todos los campos.
-                 */
-                $aErrores['descDepartamento'] = validacionFormularios::comprobarAlfanumerico($_REQUEST['descDepartamento'], 255, 3, OPCIONAL);
-
-                /*
-                 * Recorrido del array de errores.
-                 * Si existe alguno, cambia el manejador de errores a false
-                 * y limpia el campo en el $_REQUEST.
-                 */
-                foreach ($aErrores as $sCampo => $sError) {
-                    if ($sError != null) {
-                        $_REQUEST[$sCampo] = ''; //Limpieza del campo.
-                        $bEntradaOK = false;
+            
+            //Creo el array de respuestas y lo incializo a null
+            $aRespuestas = [
+                'descDepartamento' => null
+            ];
+            
+            //Comprobar si se ha pulsado el boton enviar en el formulario
+            if (isset($_REQUEST['enviar'])) {
+                //Comprobar si el campo DescDepartamento esta bien rellenado
+                $aErrores['descDepartamento'] = validacionFormularios::comprobarAlfabetico($_REQUEST['descDepartamento'], TAMANO_MAXIMO_DESCDEPARTAMENTO, OPCIONAL);
+                
+                //Comprobar si algun campo del array de errores ha sido rellenado
+                foreach ($aErrores as $campo => $error) {//recorro el array errores
+                    if ($error != null) {//compruebo si hay algun error
+                        $_REQUEST[$campo] = '';//limpio el campo
+                        $entradaOK = false;//
                     }
                 }
+            } else {//si el usuario no le ha dado a enviar
+                $entradaOK = false;
             }
-
-            /*
-             * Si el formulario no ha sido enviado
-             */ else {
-                $bEntradaOK = false;
-            }
-
-            /*
-             * Si el formulario ha sido enviado y no ha tenido errores
-             * muestra la información enviada.
-             */
-            if ($bEntradaOK) {
-                //Si la entrada es true recojo los valores del array aRespuestas
-                $aRespuestas['DescDepartamento'] = $_REQUEST['DescDepartamento'];
-             
-                //Mostrar datos
-
+              
+            if($entradaOK){ // si la entrada es true recojo los valores del array aRespuestas
+                $aRespuestas['descDepartamento'] = $_REQUEST['descDepartamento'];
+            
+                echo "<h2>Datos introducidos</h2>";
+                echo "<p>Descripcion departamento a buscar: " . $aRespuestas['descDepartamento'] . "</p>";
+                
                 echo "<h2>Contenido tabla Departamento</h2>";
-                try {
-                    //Hago la conexion con la base de datos
+                //Realizo la conexion
+                try{
+                    //conexion con la base de datos
                     $miDB = new PDO(HOST, USER, PASSWORD);
-                    //Establezco el atributo para la aparicion de errores con ATTR_ERRMODE y le pongo que cuando haya un error se lance una excepcion con ERRMODE_EXCEPTION
-                    $miDB->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                    //MUESTRA DE LA TABLA DEPARTAMENTOS
-                    $sqlmostrar = "SELECT * FROM Departamento";
-                    $resultadoConsulta2 = $miDB->prepare($sqlmostrar); //Preparo la consulta
-                    $resultadoConsulta2->execute(); //Ejecuto la consulta    
-                    ?>
-                    <table>
-                        <tr>
-                            <th>CodDepartamento</th>
-                            <th>DescDepartamento</th>
-                            <th>FechaBaja</th>
-                            <th>VolumenNegocio</th>
-                        </tr>
-        <?php
-        $oDepartamento = $resultadoConsulta2->fetchObject(); // Obtengo el primer registro de la consulta como un objeto
-        while ($oDepartamento) { // recorro los registros que devuelve la consulta de la consulta 
-            ?>
-                            <tr>
-                                
-                                <td><?php echo $oDepartamento->DescDepartamento; // obtengo el valor de la descripcion del departamento del registro actual  ?></td>
-                            </tr>
-                            <?php
-                            $oDepartamento = $resultadoConsulta2->fetchObject(); // guardo el registro actual como un objeto y avanzo el puntero al siguiente registro de la consulta 
-                        }
+                    $miDB -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                           
+                 
+                    $consulta = "SELECT * FROM Departamento WHERE DescDepartamento LIKE '%{$_REQUEST['descDepartamento']}%';";
+                            
+                    $resultadoConsulta=$miDB->prepare($consulta); // Preparo la consulta 
+                    
+                    $parametros = [":DescDepartamento" => $aRespuestas['descDepartamento']];
+                    
+                    $resultadoConsulta->execute($parametros); // Ejecuto la consulta 
+                    
+                       
+                    if($resultadoConsulta->rowCount() > 0){ //Si devuelve algun registro
                         ?>
-                    </table>    
-                    <?php
-                } catch (PDOException $excepcion) {//Codigo que se ejecuta si hay algun error
-                    $errorExcepcion = $excepcion->getCode(); //Obtengo el codigo del error y lo almaceno en la variable errorException
-                    $mensajeException = $excepcion->getMessage(); //Obtengo el mensaje del error y lo almaceno en la variable mensajeException
+                        <table>
+                            <tr>
+                                <th>CodDepartamento</th>
+                                <th>DescDepartamento</th>
+                                <th>FechaBaja</th>
+                                <th>VolumenNegocio</th>
+                            </tr>
+                            <?php 
+                                $oDepartamento = $resultadoConsulta->fetchObject(); // Obtengo el primer registro de la consulta 
+                                while($oDepartamento) { // recorro los registros ?>
+                            <tr>
+                                <td><?php echo $oDepartamento->CodDepartamento;  ?></td>
+                                <td><?php echo $oDepartamento->DescDepartamento;  ?></td>
+                                <td><?php echo $oDepartamento->FechaBaja;  ?></td>
+                                <td><?php echo $oDepartamento->VolumenNegocio;  ?></td>
+                            </tr>
+                            <?php 
+                                $oDepartamento = $resultadoConsulta->fetchObject(); // guardo el registro actual como un objeto y avanzo el puntero al siguiente registro de la consulta 
+                            }
+                            ?>
+                        </table>
+                        <?php
+                    }else{
+                        echo "<p>No se ha encontrado ningun departamento con esa descripcion.</p>";
+                        
+                        if(empty($aRespuestas['descDepartamento'])){
+                            $sqlmostrar="SELECT * FROM Departamento";
+                            $resultadoConsulta2=$miDB->prepare($sqlmostrar); // preparo la consulta
+                            $resultadoConsulta2->execute(); // ejecuto la consulta    
 
-                    echo "<span style='color: red'>Codigo del error: </span>" . $errorExcepcion; //Muestro el codigo del error
-                    echo "<span style='color: red'>Mensaje del error: </span>" . $mensajeException; //Muestro el mensaje del error
-                } finally {
+                            ?>
+                            <table>
+                                <tr>
+                                    <th>CodDepartamento</th>
+                                    <th>DescDepartamento</th>
+                                    <th>FechaBaja</th>
+                                    <th>VolumenNegocio</th>
+                                </tr>
+                                <?php 
+                                    $oDepartamento = $resultadoConsulta2->fetchObject(); // Obtengo el primer registro de la consulta 
+                                    while($oDepartamento) { // recorro los registros ?>
+                                <tr>
+                                    <td><?php echo $oDepartamento->CodDepartamento;  ?></td>
+                                    <td><?php echo $oDepartamento->DescDepartamento;  ?></td>
+                                    <td><?php echo $oDepartamento->FechaBaja;  ?></td>
+                                    <td><?php echo $oDepartamento->VolumenNegocio;  ?></td>
+                                </tr>
+                                <?php 
+                                    $oDepartamento = $resultadoConsulta2->fetchObject(); // guardo el registro actual como un objeto y avanzo el puntero al siguiente registro de la consulta 
+                                }
+                                ?>
+                            </table>
+                            <?php
+                        }
+                    }
+                }catch(PDOException $excepcion){//Codigo que se ejecuta si hay algun error
+                    $errorExcepcion = $excepcion->getCode();//Obtengo el codigo del error y lo almaceno en la variable errorException
+                    $mensajeException = $excepcion->getMessage();//Obtengo el mensaje del error y lo almaceno en la variable mensajeException
+
+                    echo "<span style='color: red'>Codigo del error: </span>" . $errorExcepcion;//Muestro el codigo del error
+                    echo "<span style='color: red'>Mensaje del error: </span>" . $mensajeException;//Muestro el mensaje del error
+                }finally{
                     //Cierro la conexion
                     unset($miDB);
                 }
-            } else {// si hay algun campo de la entrada que este mal muestro el formulario hasta que esten bien todos los campos
-                ?> 
-
-                <form name="formulario" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" class="form">
+            }else{// muestra el formulario hasta que esten bien todos los campos
+            ?>
+            
+            <form name="formulario" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" class="form">
                     <fieldset>
-                        <h2>Formulario de Busqueda de departamento</h2>
-                        <ul>
-                           
-                            <!--Campo Alfabetico DescDepartamento OBLIGATORIO-->
-                            <li>
+                        <legend>Busqueda de un departamento</legend>
+                        
+                            <!--Campo Alfabetico DescDepartamento OBLIGATORIO -->
+                          
                                 <div>
-                                    <label for="DescDepartamento"><strong>Descripcion Departamento*</strong></label>
-                                    <input name="DescDepartamento" id="DescDepartamento" type="text" value="<?php echo isset($_REQUEST['DescDepartamento']) ? $_REQUEST['DescDepartamento'] : ''; ?>" placeholder="Introduzca la Descripcion del Departamento">
-                                    <?php echo '<span>' . $aErrores['DescDepartamento'] . '</span>' ?>
+                                    <label for="descDepartamento"><strong>Descripcion Departamento</strong></label>
+                                    <input name="descDepartamento" id="descDepartamento" type="text" value="<?php echo isset($_REQUEST['descDepartamento']) ? $_REQUEST['descDepartamento'] : ''; ?>" placeholder="Introduzca la Descripcion del Departamento">
+                                    <?php echo '<span>' . $aErrores['descDepartamento'] . '</span>' ?>
                                 </div>
-                            </li>
-                            
-                            <!--Campo Boton Enviar-->
-                            <li>
+                
                                 <input class="enviar" id="enviar" type="submit" name="enviar" value="Enviar"/>
-                            </li>
-                        </ul>
+                         
                     </fieldset>
                 </form>
-                <?php
+            <?php
             }
             ?>
-
+        </main>
     </body>
 </html>
