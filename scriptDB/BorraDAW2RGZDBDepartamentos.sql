@@ -8,6 +8,6 @@
  * Created: 4 nov. 2021
  */
 
-DROP DATABASE DAW2103DBDepartamentos;
+DROP DATABASE DB203DWESProyectoTema4;
 
-DROP USER usuarioDAW2103DBDepartamentos;
+DROP USER User203DWESProyectoTema4;

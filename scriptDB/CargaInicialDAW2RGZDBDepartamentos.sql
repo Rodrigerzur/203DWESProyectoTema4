@@ -8,7 +8,7 @@
  * Created: 4 nov. 2021
  */
 
-USE DAW2103DBDepartamentos;
+USE DB203DWESProyectoTema4;
 -- Insertar datos en la tabla Departamento de la base de datos DAW207DBDepartamentos
 INSERT INTO Departamento (CodDepartamento, DescDepartamento, FechaBaja, VolumenNegocio) VALUES
 ('INF','Departamento de Informatica',null,1.5),

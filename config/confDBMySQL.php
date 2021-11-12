@@ -6,8 +6,8 @@
  * and open the template in the editor.
  */
 
-define("HOST","192.168.3.114");
-define("PASSWORD", "P@ssw0rd");
-define("USER","usuarioDAW2103DBDepartamentos");
-define("DB", "DAW2103DBDepartamentos");
+define("HOST","daw203.sauces.local");
+define("PASSWORD", "paso");
+define("USER","User203DWESProyectoTema4");
+define("DB", "DB203DWESProyectoTema4");
 

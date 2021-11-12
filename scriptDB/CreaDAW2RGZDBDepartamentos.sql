@@ -8,11 +8,11 @@
  * Created: 4 nov. 2021
  */
 
-create database DAW2103DBDepartamentos;
-use DAW2103DBDepartamentos;
+create database DB203DWESProyectoTema4;
+use DB203DWESProyectoTema4;
 
-create user 'usuarioDAW2103DBDepartamentos'@'%' IDENTIFIED BY 'P@ssw0rd';
-grant all privileges on DAW2103DBDepartamentos.* to 'usuarioDAW2103DBDepartamentos'@'%' with grant option;
+create user 'User203DWESProyectoTema4'@'%' IDENTIFIED BY 'paso';
+grant all privileges on DB203DWESProyectoTema4.* to 'User203DWESProyectoTema4'@'%' with grant option;
 
 CREATE TABLE IF NOT EXISTS Departamento(
     CodDepartamento varchar(3) PRIMARY KEY,
