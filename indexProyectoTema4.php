@@ -167,9 +167,7 @@
                             <tr>
                                 <td>10- Aplicación resumen MtoDeDepartamentos POO y multicapa</td><td colspan="2"><a href="codigoPHP/ejercicio05PDO.php">Ejecutar</a></td><td colspan="2"><a href="mostrarcodigo/muestraEjercicio05PDO.php">Mostrar</a></td>
                             </tr>
-                            <tr>
-                                <td>11- Aplicación resumen MtoDeDepartamentos POO y multicapa</td><td colspan="2"><a href="codigoPHP/ejercicio05PDO.php">Ejecutar</a></td><td colspan="2"><a href="mostrarcodigo/muestraEjercicio05PDO.php">Mostrar</a></td>
-                            </tr>                        </table>
+                        </table>
 
 
 
