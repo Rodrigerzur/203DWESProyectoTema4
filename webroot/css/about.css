@@ -716,8 +716,19 @@ table td{
     height:100%
 
 }
+td::before{
+    opacity:0.20;
+    content:attr(data-hover);
+    transition: opacity 300ms ease-in-out;
+    z-index:1;
+    top:100%;
+    font-weight: bold;
+    color:red;
+    
+}
 td:hover:before{
     color:red;
+    opacity: 1;
     visibility: visible;
     content:attr(data-hover);
 }

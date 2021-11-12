@@ -102,7 +102,7 @@
                     </div>
                     <div class="row services_row">
 
-                        <!-- Ejercicio -->
+                        <!-- Ejercicio 
                         <div class="col-xl-4 col-md-6">
                             <a href="codigoPHP/ejercicio01PDO.php">
                                 <div class="service">
@@ -125,28 +125,47 @@
                                 </div>
                             </a>
                         </div>
+                        -->
 
                         <table>
                             <tr>
-                                <td>Conexión a la base de datos con la cuenta usuario y tratamiento de errores.</td><td data-hover ="PDO"><a href="codigoPHP/ejercicio01PDO.php">Ejecutar</a></td><td><a href="mostrarcodigo/muestraEjercicio01PDO.php">Mostrar</a></td>
-                                <td><a href="codigoPHP/ejercicio01PDO.php">Ejecutar</a></td><td><a href="mostrarcodigo/muestraEjercicio01PDO.php">Mostrar</a></td>
+                                <td>1- Conexión a la base de datos con la cuenta usuario y tratamiento de errores.</td><td data-hover ="PDO"><a href="codigoPHP/ejercicio01PDO.php">Ejecutar</a></td><td data-hover ="PDO"><a href="mostrarcodigo/muestraEjercicio01PDO.php">Mostrar</a></td>
+                                <td data-hover ="MySQLi"><a href="codigoPHP/ejercicio01MySQLi.php">Ejecutar</a></td><td data-hover ="MySQLi"><a href="mostrarcodigo/muestraEjercicio01MySQLi.php">Mostrar</a></td>
                             </tr>
 
                             <tr>
-                                <td>Mostrar el contenido de la tabla Departamento y el número de registros.</td><td><a href="codigoPHP/ejercicio02PDO.php">Ejecutar</a></td><td><a href="mostrarcodigo/muestraEjercicio02PDO.php">Mostrar</a></td>
-                                <td><a href="codigoPHP/ejercicio02PDO.php">Ejecutar</a></td><td><a href="mostrarcodigo/muestraEjercicio02PDO.php">Mostrar</a></td>
+                                <td>2- Mostrar el contenido de la tabla Departamento y el número de registros.</td><td data-hover ="PDO"><a href="codigoPHP/ejercicio02PDO.php">Ejecutar</a></td><td data-hover ="PDO"><a href="mostrarcodigo/muestraEjercicio02PDO.php">Mostrar</a></td>
+                                <td data-hover ="MySQLi"><a href="codigoPHP/ejercicio02MySQLi.php">Ejecutar</a></td><td data-hover ="MySQLi"><a href="mostrarcodigo/muestraEjercicio02MySQLi.php">Mostrar</a></td>
                             </tr>
                             <tr>
-                                <td>Formulario para añadir un departamento a la tabla Departamento con validación de entrada y
+                                <td>3- Formulario para añadir un departamento a la tabla Departamento con validación de entrada y
                                     control de errores.<td colspan="2"><a href="codigoPHP/ejercicio03PDO.php">Ejecutar</a></td><td colspan="2"><a href="mostrarcodigo/muestraEjercicio03PDO.php">Mostrar</a></td>
                                 </td>
                             </tr>
                             <tr>
-                                <td>Formulario de búsqueda de departamentos por descripción</td><td colspan="2"><a href="codigoPHP/ejercicio04PDO.php">Ejecutar</a></td><td colspan="2"><a href="mostrarcodigo/muestraEjercicio04PDO.php">Mostrar</a></td>
+                                <td>4- Formulario de búsqueda de departamentos por descripción</td><td colspan="2"><a href="codigoPHP/ejercicio04PDO.php">Ejecutar</a></td><td colspan="2"><a href="mostrarcodigo/muestraEjercicio04PDO.php">Mostrar</a></td>
                             </tr>
                             <tr>
-                                <td>Pagina web que añade tres registros a nuestra tabla Departamento utilizando tres instrucciones
+                                <td>5- Pagina web que añade tres registros a nuestra tabla Departamento utilizando tres instrucciones
                                     insert y una transacción, de tal forma que se añadan los tres registros o no se añada ninguno.</td><td colspan="2"><a href="codigoPHP/ejercicio05PDO.php">Ejecutar</a></td><td colspan="2"><a href="mostrarcodigo/muestraEjercicio05PDO.php">Mostrar</a></td>
+                            </tr>
+                            <tr>
+                                <td>6- Pagina web que cargue registros en la tabla Departamento desde un array departamentosnuevos
+                                    utilizando una consulta preparada</td><td colspan="2"><a href="codigoPHP/ejercicio05PDO.php">Ejecutar</a></td><td colspan="2"><a href="mostrarcodigo/muestraEjercicio05PDO.php">Mostrar</a></td>
+                            </tr>
+                            <tr>
+                                <td>7- Página web que toma datos (código y descripción) de un fichero xml y los añade a la tabla
+                                    Departamento de nuestra base de datos. (IMPORTAR).</td><td colspan="2"><a href="codigoPHP/ejercicio05PDO.php">Ejecutar</a></td><td colspan="2"><a href="mostrarcodigo/muestraEjercicio05PDO.php">Mostrar</a></td>
+                            </tr>
+                            <tr>
+                                <td>8- Página web que toma datos (código y descripción) de la tabla Departamento y guarda en un
+                                    fichero departamento.xml. (COPIA DE SEGURIDAD / EXPORTAR)</td><td colspan="2"><a href="codigoPHP/ejercicio05PDO.php">Ejecutar</a></td><td colspan="2"><a href="mostrarcodigo/muestraEjercicio05PDO.php">Mostrar</a></td>
+                            </tr>
+                            <tr>
+                                <td>9- Aplicación resumen MtoDeDepartamentosTema4</td><td colspan="2"><a href="codigoPHP/ejercicio05PDO.php">Ejecutar</a></td><td colspan="2"><a href="mostrarcodigo/muestraEjercicio05PDO.php">Mostrar</a></td>
+                            </tr>
+                            <tr>
+                                <td>10- Aplicación resumen MtoDeDepartamentos POO y multicapa</td><td colspan="2"><a href="codigoPHP/ejercicio05PDO.php">Ejecutar</a></td><td colspan="2"><a href="mostrarcodigo/muestraEjercicio05PDO.php">Mostrar</a></td>
                             </tr>
                         </table>
 
