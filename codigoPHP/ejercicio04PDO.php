@@ -177,22 +177,21 @@
                                     <td><?php echo $oDepartamento->VolumenNegocio;  ?></td>
                                 </tr>
                                 <?php 
-                                    $oDepartamento = $resultadoConsulta2->fetchObject(); // guardo el registro actual como un objeto y avanzo el puntero al siguiente registro de la consulta 
+                                    $oDepartamento = $resultadoConsulta2->fetchObject(); 
                                 }
                                 ?>
                             </table>
                             <?php
                         }
                     }
-                }catch(PDOException $excepcion){//Codigo que se ejecuta si hay algun error
-                    $errorExcepcion = $excepcion->getCode();//Obtengo el codigo del error y lo almaceno en la variable errorException
-                    $mensajeException = $excepcion->getMessage();//Obtengo el mensaje del error y lo almaceno en la variable mensajeException
+                }catch (PDOException $excepcion) { //si se produce alguna excepción
+                    $errorExcepcion = $excepcion->getCode(); //Guardar el código del error 
+                    $mensajeExcepcion = $excepcion->getMessage(); //Guardar el mensaje de la excepcion
 
-                    echo "<span style='color: red'>Codigo del error: </span>" . $errorExcepcion;//Muestro el codigo del error
-                    echo "<span style='color: red'>Mensaje del error: </span>" . $mensajeException;//Muestro el mensaje del error
-                }finally{
-                    //Cierro la conexion
-                    unset($miDB);
+                    echo "<span>Error: </span>" . $mensajeExcepcion . "<br>"; //mensaje de la excepción
+                    echo "<span>Código del error: </span>" . $errorExcepcion; //código de la excepción
+                } finally {
+                    unset($miDB); //Cerrar la conexion 
                 }
             }else{// muestra el formulario hasta que esten bien todos los campos
             ?>
@@ -200,8 +199,6 @@
             <form name="formulario" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" class="form">
                     <fieldset>
                         <legend>Busqueda de un departamento</legend>
-                        
-                            <!--Campo Alfabetico DescDepartamento OBLIGATORIO -->
                           
                                 <div>
                                     <label for="descDepartamento"><strong>Descripcion Departamento</strong></label>

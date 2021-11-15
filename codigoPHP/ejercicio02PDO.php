@@ -33,9 +33,10 @@
                 <?php
                 //cogemos el contenido de la tabla con select
                 $sql = 'SELECT * FROM Departamento';
-                //esto es un objeto de clase PDOStatement
-                $resultadoConsulta = $miDB->query($sql);
+               
+                $resultadoConsulta = $miDB->prepare($sql);//Preparamos la consulta
                 //mostrar el numero de registros que hemos seleccionado
+                $resultadoConsulta->execute();//Ejecutamos la consulta
                 $numRegistros = $resultadoConsulta->rowCount();
                 echo '<p style="color: blue"> <strong>Número de registros: ' . $numRegistros . '</strong></p>';
                 $registroObjeto = $resultadoConsulta->fetchObject();
