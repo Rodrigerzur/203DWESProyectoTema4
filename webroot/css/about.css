@@ -507,7 +507,7 @@ Header
     width: 200px;
     height: 50vh;
     z-index: 102;
-    background: #000000;
+    background: #ffffff;
     padding-right: 30px;
     padding-top: 100px;
     -webkit-transition: all 400ms ease;
@@ -531,7 +531,7 @@ Header
 .menu_close i
 {
     font-size: 30px;
-    color: #ffffff;
+    color: #000000;
     -webkit-transition: all 200ms ease;
     -moz-transition: all 200ms ease;
     -ms-transition: all 200ms ease;
@@ -540,7 +540,7 @@ Header
 }
 .menu_close:hover i
 {
-    color: #ff0000;
+    color: #fe0000;
 }
 .menu_log_reg
 {
@@ -561,8 +561,8 @@ Header
 }
 .menu .log_reg ul li:not(:last-of-type)::after
 {
-    color: #ffffff;
-    font-weight: 600;
+    color: #000000;
+	font-weight: 600;
 }
 .menu_nav
 {
@@ -575,12 +575,12 @@ Header
 .menu_nav ul li a
 {
     font-size: 30px;
-    color: #ffffff;
-    font-weight: 600;
+	color: #000000;
+	font-weight: 600;
 }
 .menu_nav ul li a:hover
 {
-    color: #feff00;
+    color: #fe0000;
 }
 /****************
 Los ejercicios
@@ -707,8 +707,8 @@ table{
 }
 table td{
     border: solid 1px black;
-    
-   
+
+
     padding:10px;
     font-size: 1.2em;
     font-weight: bold;
@@ -724,7 +724,7 @@ td::before{
     top:100%;
     font-weight: bold;
     color:red;
-    
+
 }
 td:hover:before{
     color:red;

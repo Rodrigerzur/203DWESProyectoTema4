@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Departamentos>
+  <Departamento>
+    <CodDepartamento>BIO</CodDepartamento>
+    <DescDepartamento>Departamento de Biologia</DescDepartamento>
+    <FechaBaja/>
+    <VolumenNegocio>2.5</VolumenNegocio>
+  </Departamento>
+  <Departamento>
+    <CodDepartamento>INF</CodDepartamento>
+    <DescDepartamento>Departamento de Informatica</DescDepartamento>
+    <FechaBaja/>
+    <VolumenNegocio>1.5</VolumenNegocio>
+  </Departamento>
+  <Departamento>
+    <CodDepartamento>ING</CodDepartamento>
+    <DescDepartamento>Departamento de Inglés</DescDepartamento>
+    <FechaBaja/>
+    <VolumenNegocio>3.5</VolumenNegocio>
+  </Departamento>
+  <Departamento>
+    <CodDepartamento>LEN</CodDepartamento>
+    <DescDepartamento>Departamento de Lengua</DescDepartamento>
+    <FechaBaja/>
+    <VolumenNegocio>4.5</VolumenNegocio>
+  </Departamento>
+  <Departamento>
+    <CodDepartamento>MUS</CodDepartamento>
+    <DescDepartamento>Departamento de Musica</DescDepartamento>
+    <FechaBaja/>
+    <VolumenNegocio>1.5</VolumenNegocio>
+  </Departamento>
+</Departamentos>

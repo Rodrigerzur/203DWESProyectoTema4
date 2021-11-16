@@ -50,7 +50,7 @@
                 
                 $archivoXML->save("../tmp/tablaDepartamento.xml");//Guardar el xml en un archivo dentro de la carpeta tmp
                 
-                echo "<h3> <span style='color: green;'>" . "Ningun problema encontrado </span></h3>";
+                echo "<h3> <span style='color: green;'>" . "Ningun problema encontrado <br> Consulta el fichero tablaDepartamentos.xml</span></h3>";
         } catch (PDOException $excepcion) { //si se produce alguna excepción
             $errorExcepcion = $excepcion->getCode(); //Guardar el código del error 
             $mensajeExcepcion = $excepcion->getMessage(); //Guardar el mensaje de la excepcion

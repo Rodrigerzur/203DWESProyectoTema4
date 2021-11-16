@@ -22,7 +22,8 @@
             $miDB = new PDO(HOST, USER, PASSWORD);
             //Establezco el atributo para la aparicion de errores con ATTR_ERRMODE y le pongo que cuando haya un error se lance una excepcion con ERRMODE_EXCEPTION
             $miDB->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
+            
+            
             $sql = <<<HER
             Insert into Departamento values
             (:CodDepartamento, :DescDepartamento, :FechaBaja, :VolumenNegocio);
@@ -31,7 +32,9 @@
 
             $consulta = $miDB->prepare($sql); //Preparar la consulta
 
+            $miDB->beginTransaction();
             $archivoXML = new DOMDocument("1.0", "utf-8"); //Objeto DOMDocument
+            $archivoXML-> formatOutput=true;
             $archivoXML->load('../tmp/tablaDepartamento.xml'); //Cargamos el documento XML
 
             $numeroDepartamentos = $archivoXML->getElementsByTagName('Departamento')->count(); //Contamos y guardamos el número de departamentos
@@ -55,8 +58,12 @@
                     ":VolumenNegocio" => $VolumenNegocio];
                 $consulta->execute($parametros); //Ejecutamos la consulta con los parámetros
             }
-            echo "<h3> <span style='color: green;'>" . "Ningun problema encontrado </span></h3>";
-        } catch (PDOException $excepcion) { //Código por si se produce alguna excepción
+            $miDB->commit();
+            
+            echo "<h3> <span style='color: green;'>" . "Ningun problema encontrado<br> Consulta el ejercicio 02 para visualizar la tabla </span></h3>";
+        } catch (PDOException $excepcion) {//Código por si se produce alguna excepción
+             $miDB->rollback();
+
             $errorExcepcion = $excepcion->getCode(); //Guardar el código del error 
             $mensajeExcepcion = $excepcion->getMessage(); //Guardar el mensaje de la excepcion
 
