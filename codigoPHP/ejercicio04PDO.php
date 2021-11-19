@@ -118,7 +118,7 @@
                     $miDB -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                            
                  
-                    $consulta = "SELECT * FROM Departamento WHERE DescDepartamento LIKE '%{$_REQUEST['descDepartamento']}%';";
+                    $consulta = "SELECT * FROM Departamento WHERE DescDepartamento LIKE '%{$aRespuestas['descDepartamento']}%';";
                             
                     $resultadoConsulta=$miDB->prepare($consulta); // Preparo la consulta 
                     
@@ -154,35 +154,7 @@
                     }else{
                         echo "<p>No se ha encontrado ningun departamento con esa descripcion.</p>";
                         
-                        if(empty($aRespuestas['descDepartamento'])){
-                            $sqlmostrar="SELECT * FROM Departamento";
-                            $resultadoConsulta2=$miDB->prepare($sqlmostrar); // preparo la consulta
-                            $resultadoConsulta2->execute(); // ejecuto la consulta    
-
-                            ?>
-                            <table>
-                                <tr>
-                                    <th>CodDepartamento</th>
-                                    <th>DescDepartamento</th>
-                                    <th>FechaBaja</th>
-                                    <th>VolumenNegocio</th>
-                                </tr>
-                                <?php 
-                                    $oDepartamento = $resultadoConsulta2->fetchObject(); // Obtengo el primer registro de la consulta 
-                                    while($oDepartamento) { // recorro los registros ?>
-                                <tr>
-                                    <td><?php echo $oDepartamento->CodDepartamento;  ?></td>
-                                    <td><?php echo $oDepartamento->DescDepartamento;  ?></td>
-                                    <td><?php echo $oDepartamento->FechaBaja;  ?></td>
-                                    <td><?php echo $oDepartamento->VolumenNegocio;  ?></td>
-                                </tr>
-                                <?php 
-                                    $oDepartamento = $resultadoConsulta2->fetchObject(); 
-                                }
-                                ?>
-                            </table>
-                            <?php
-                        }
+                      
                     }
                 }catch (PDOException $excepcion) { //si se produce alguna excepción
                     $errorExcepcion = $excepcion->getCode(); //Guardar el código del error 

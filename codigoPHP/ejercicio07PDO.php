@@ -22,8 +22,8 @@
             $miDB = new PDO(HOST, USER, PASSWORD);
             //Establezco el atributo para la aparicion de errores con ATTR_ERRMODE y le pongo que cuando haya un error se lance una excepcion con ERRMODE_EXCEPTION
             $miDB->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            
-            
+
+
             $sql = <<<HER
             Insert into Departamento values
             (:CodDepartamento, :DescDepartamento, :FechaBaja, :VolumenNegocio);
@@ -34,15 +34,15 @@
 
             $miDB->beginTransaction();
             $archivoXML = new DOMDocument("1.0", "utf-8"); //Objeto DOMDocument
-            $archivoXML-> formatOutput=true;
+            $archivoXML->formatOutput = true;
             $archivoXML->load('../tmp/tablaDepartamento.xml'); //Cargamos el documento XML
 
             $numeroDepartamentos = $archivoXML->getElementsByTagName('Departamento')->count(); //Contamos y guardamos el número de departamentos
-            
+
             for ($numeroDepartamento = 0; $numeroDepartamento < $numeroDepartamentos; $numeroDepartamento++) {
-                    //Recorremos los departamentos que tenemos en la BD
+                //Recorremos los departamentos que tenemos en la BD
                 $CodDepartamento = $archivoXML->getElementsByTagName("CodDepartamento")->item($numeroDepartamento)->nodeValue;
-               //Guardar valores
+                //Guardar valores
                 $DescDepartamento = $archivoXML->getElementsByTagName("DescDepartamento")->item($numeroDepartamento)->nodeValue;
                 //Guardar valores               
                 $FechaBaja = $archivoXML->getElementsByTagName("FechaBaja")->item($numeroDepartamento)->nodeValue;
@@ -59,10 +59,10 @@
                 $consulta->execute($parametros); //Ejecutamos la consulta con los parámetros
             }
             $miDB->commit();
-            
+
             echo "<h3> <span style='color: green;'>" . "Ningun problema encontrado<br> Consulta el ejercicio 02 para visualizar la tabla </span></h3>";
         } catch (PDOException $excepcion) {//Código por si se produce alguna excepción
-             $miDB->rollback();
+            $miDB->rollback();
 
             $errorExcepcion = $excepcion->getCode(); //Guardar el código del error 
             $mensajeExcepcion = $excepcion->getMessage(); //Guardar el mensaje de la excepcion

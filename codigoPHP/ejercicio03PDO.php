@@ -135,7 +135,7 @@ and open the template in the editor.
             $entradaOK = false;
         }
         if ($entradaOK) { //Si la entrada es true 
-            $aRespuestas['CodDepartamento'] = strtoupper($_REQUEST['CodDepartamento']); 
+            $aRespuestas['CodDepartamento'] = ($_REQUEST['CodDepartamento']); 
             $aRespuestas['DescDepartamento'] = $_REQUEST['DescDepartamento'];
             $aRespuestas['volumenNegocio'] = $_REQUEST['volumenNegocio'];
             //Mostrar datos
