@@ -139,33 +139,33 @@
                             </tr>
                             <tr>
                                 <td>3- Formulario para añadir un departamento a la tabla Departamento con validación de entrada y
-                                    control de errores.<td colspan="2"><a href="codigoPHP/ejercicio03PDO.php">Ejecutar</a></td><td colspan="2"><a href="mostrarcodigo/muestraEjercicio03PDO.php">Mostrar</a></td>
+                                    control de errores.<td colspan="2" data-hover ="PDO"><a href="codigoPHP/ejercicio03PDO.php">Ejecutar</a></td><td colspan="2" data-hover ="PDO"><a href="mostrarcodigo/muestraEjercicio03PDO.php">Mostrar</a></td>
                                 </td>
                             </tr>
                             <tr>
-                                <td>4- Formulario de búsqueda de departamentos por descripción</td><td colspan="2"><a href="codigoPHP/ejercicio04PDO.php">Ejecutar</a></td><td colspan="2"><a href="mostrarcodigo/muestraEjercicio04PDO.php">Mostrar</a></td>
+                                <td>4- Formulario de búsqueda de departamentos por descripción</td><td colspan="2" data-hover ="PDO"><a href="codigoPHP/ejercicio04PDO.php">Ejecutar</a></td><td colspan="2" data-hover ="PDO"><a href="mostrarcodigo/muestraEjercicio04PDO.php">Mostrar</a></td>
                             </tr>
                             <tr>
                                 <td>5- Pagina web que añade tres registros a nuestra tabla Departamento utilizando tres instrucciones
-                                    insert y una transacción, de tal forma que se añadan los tres registros o no se añada ninguno.</td><td colspan="2"><a href="codigoPHP/ejercicio05PDO.php">Ejecutar</a></td><td colspan="2"><a href="mostrarcodigo/muestraEjercicio05PDO.php">Mostrar</a></td>
+                                    insert y una transacción, de tal forma que se añadan los tres registros o no se añada ninguno.</td><td colspan="2" data-hover ="PDO"><a href="codigoPHP/ejercicio05PDO.php">Ejecutar</a></td><td colspan="2" data-hover ="PDO"><a href="mostrarcodigo/muestraEjercicio05PDO.php">Mostrar</a></td>
                             </tr>
                             <tr>
                                 <td>6- Pagina web que cargue registros en la tabla Departamento desde un array departamentosnuevos
-                                    utilizando una consulta preparada</td><td colspan="2"><a href="codigoPHP/ejercicio06PDO.php">Ejecutar</a></td><td colspan="2"><a href="mostrarcodigo/muestraEjercicio06PDO.php">Mostrar</a></td>
+                                    utilizando una consulta preparada</td><td colspan="2" data-hover ="PDO"><a href="codigoPHP/ejercicio06PDO.php">Ejecutar</a></td><td colspan="2" data-hover ="PDO"><a href="mostrarcodigo/muestraEjercicio06PDO.php">Mostrar</a></td>
                             </tr>
                             <tr>
                                 <td>7- Página web que toma datos (código y descripción) de un fichero xml y los añade a la tabla
-                                    Departamento de nuestra base de datos. (IMPORTAR).</td><td colspan="2"><a href="codigoPHP/ejercicio07PDO.php">Ejecutar</a></td><td colspan="2"><a href="mostrarcodigo/muestraEjercicio07PDO.php">Mostrar</a></td>
+                                    Departamento de nuestra base de datos. (IMPORTAR).</td><td colspan="2" data-hover ="PDO"><a href="codigoPHP/ejercicio07PDO.php">Ejecutar</a></td><td colspan="2" data-hover ="PDO"><a href="mostrarcodigo/muestraEjercicio07PDO.php">Mostrar</a></td>
                             </tr>
                             <tr>
                                 <td>8- Página web que toma datos (código y descripción) de la tabla Departamento y guarda en un
-                                    fichero departamento.xml. (COPIA DE SEGURIDAD / EXPORTAR)</td><td colspan="2"><a href="codigoPHP/ejercicio08PDO.php">Ejecutar</a></td><td colspan="2"><a href="mostrarcodigo/muestraEjercicio08PDO.php">Mostrar</a></td>
+                                    fichero departamento.xml. (COPIA DE SEGURIDAD / EXPORTAR)</td><td colspan="2" data-hover ="PDO"><a href="codigoPHP/ejercicio08PDO.php">Ejecutar</a></td><td colspan="2" data-hover ="PDO"><a href="mostrarcodigo/muestraEjercicio08PDO.php">Mostrar</a></td>
                             </tr>
                             <tr>
-                                <td>9- Aplicación resumen MtoDeDepartamentosTema4</td><td colspan="2"><a href="codigoPHP/ejercicio09PDO.php">Ejecutar</a></td><td colspan="2"><a href="mostrarcodigo/muestraEjercicio09PDO.php">Mostrar</a></td>
+                                <td>9- Aplicación resumen MtoDeDepartamentosTema4</td><td colspan="4" data-hover ="PDO"><a href="../203DWESmtoDepartamentosTema4/codigoPHP/mtoDepartamentos.php">Ejecutar</a></td>
                             </tr>
                             <tr>
-                                <td>10- Aplicación resumen MtoDeDepartamentos POO y multicapa</td><td colspan="2"><a href="codigoPHP/ejercicio10PDO.php">Ejecutar</a></td><td colspan="2"><a href="mostrarcodigo/muestraEjercicio10PDO.php">Mostrar</a></td>
+                                <td>10- Aplicación resumen MtoDeDepartamentos POO y multicapa</td><td colspan="4" data-hover ="PDO"><a href="codigoPHP/ejercicio10PDO.php">Ejecutar</a></td>
                             </tr>
                         </table>
 
