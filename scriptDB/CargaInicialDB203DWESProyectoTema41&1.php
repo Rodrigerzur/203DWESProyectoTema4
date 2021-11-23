@@ -7,7 +7,7 @@ try {
 
     $sql = <<<EOD
 USE dbs4868791;
--- Insertar datos en la tabla Departamento de la base de datos dbs4868791
+-- Insertar datos en la tabla Departamento de la base de datos dbs4868791;
 INSERT INTO Departamento (CodDepartamento, DescDepartamento, FechaBaja, VolumenNegocio) VALUES
 ('INF','Departamento de Informatica',null,1.5),
 ('BIO','Departamento de Biologia',null,2.5),
