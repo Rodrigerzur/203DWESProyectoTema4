@@ -126,7 +126,13 @@
                             </a>
                         </div>
                         -->
-
+                        <table class="Config">
+                            <td><a href="scriptDB/CreaDB203DWESProyectoTema41&1.php">Crear BD</a></td>
+                            <td><a href="scriptDB/CargaInicialDB203DWESProyectoTema41&1.php">Cargar BD</a></td>
+                            <td><a href="scriptDB/BorraDB203DWESProyectoTema41&1.php" style="color:red">Borrar BD</a></td>
+                            <td><a href="mostrarcodigo/muestraConfPDO.php">Ver Conf PDO</a></td>
+                            <td><a href="mostrarcodigo/muestraConfMySQLi.php">Ver Conf MySQLi</a></td>
+                        </table> 
                         <table>
                             <tr>
                                 <td>1- Conexión a la base de datos con la cuenta usuario y tratamiento de errores.</td><td data-hover ="PDO"><a href="codigoPHP/ejercicio01PDO.php">Ejecutar</a></td><td data-hover ="PDO"><a href="mostrarcodigo/muestraEjercicio01PDO.php">Mostrar</a></td>

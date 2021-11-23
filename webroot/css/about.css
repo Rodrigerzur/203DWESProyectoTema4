@@ -607,7 +607,17 @@ Los ejercicios
 }
 .services_row
 {
-    margin-top: 80px;
+    margin-top: 50px;
+}
+.Config{
+    margin-bottom: 15px; border-color: grey;
+}
+.Config td{
+    text-align: center;
+    padding: 15px;
+    font-weight: bold;
+    border:3px solid grey;
+   
 }
 .service
 {
