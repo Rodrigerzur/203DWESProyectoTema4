@@ -1,5 +1,5 @@
 <?php
-
+require_once '../config/confDBPDO.php'; //Archivo con configuracion de PDO
 try {
 
     $miDB = new PDO(HOST, USER, PASSWORD);
@@ -7,14 +7,13 @@ try {
 
     $sql = <<<EOD
 USE dbs4868791;
--- Insertar datos en la tabla Departamento de la base de datos dbs4868791;
 INSERT INTO Departamento (CodDepartamento, DescDepartamento, FechaBaja, VolumenNegocio) VALUES
 ('INF','Departamento de Informatica',null,1.5),
 ('BIO','Departamento de Biologia',null,2.5),
 ('ING','Departamento de Inglés',null,3.5),
 ('LEN','Departamento de Lengua',null,4.5),
 ('MUS','Departamento de Musica',null,1.5);
- EOD;
+EOD;
 
     $miDB->exec($sql);
 } catch (PDOException $excepcion) {//Codigo que se ejecuta si hay algun error

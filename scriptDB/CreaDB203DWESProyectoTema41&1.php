@@ -1,27 +1,20 @@
 
 <?php
-
+require_once '../config/confDBPDO.php'; //Archivo con configuracion de PDO
 try {
 
     $miDB = new PDO(HOST, USER, PASSWORD);
     $miDB->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     $sql = <<<EOD
-    
-    
-create database dbs4868791;
 use dbs4868791;
-
-//create user 'dbu2267458'@'%' IDENTIFIED BY 'paso';
-//grant all privileges on dbs4868791.* to 'dbu2267458'@'%';
-
 CREATE TABLE IF NOT EXISTS Departamento(
-    CodDepartamento varchar(3) PRIMARY KEY,
-    DescDepartamento varchar(255) NOT NULL,
-    FechaBaja date NULL,
-    VolumenNegocio float NULL
+CodDepartamento varchar(3) PRIMARY KEY,
+DescDepartamento varchar(255) NOT NULL,
+FechaBaja date NULL,
+VolumenNegocio float NULL
 )engine=innodb; 
- EOD;
+EOD;
 
     $miDB->exec($sql);
 } catch (PDOException $excepcion) {//Codigo que se ejecuta si hay algun error

@@ -1,5 +1,5 @@
 <?php
-
+require_once '../config/confDBPDO.php'; //Archivo con configuracion de PDO
 try {
 
     $miDB = new PDO(HOST, USER, PASSWORD);
@@ -7,9 +7,8 @@ try {
 
     $sql = <<<EOD
 DROP DATABASE dbs4868791;
-
 DROP USER dbu2267458;
- EOD;
+EOD;
 
     $miDB->exec($sql);
 } catch (PDOException $excepcion) {//Codigo que se ejecuta si hay algun error
@@ -23,6 +22,5 @@ DROP USER dbu2267458;
     unset($miDB);
 }
 ?>
-
 
 
