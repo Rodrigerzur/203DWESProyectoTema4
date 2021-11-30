@@ -6,8 +6,7 @@ try {
     $miDB->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     $sql = <<<EOD
-DROP DATABASE dbs4868791;
-DROP USER dbu2267458;
+DROP TABLE Departamento;
 EOD;
 
     $miDB->exec($sql);
@@ -22,5 +21,8 @@ EOD;
     unset($miDB);
 }
 ?>
+
+
+
 
 
